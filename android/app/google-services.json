@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "499633176884",
+    "project_id": "croptrack-816bd",
+    "storage_bucket": "croptrack-816bd.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:499633176884:android:bdbae6f8d6f2f48a3a2561",
+        "android_client_info": {
+          "package_name": "com.example.croptrack"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCinaoultHX6IRsp8qn4G4WWGx8i68-W-g"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
