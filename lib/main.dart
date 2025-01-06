@@ -6,6 +6,7 @@ import 'package:firebase_auth/firebase_auth.dart'; // Add this import
 import 'firebase_options.dart';
 import 'package:croptrack/config/theme.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_riverpod/flutter_riverpod.dart';
 
 void main() async {
   await dotenv.load();
@@ -19,7 +20,11 @@ void main() async {
     );
   }
 
-  runApp(const MyApp());
+  runApp(
+    const ProviderScope(
+      child: MyApp(),
+    ),
+  );
 }
 
 class MyApp extends StatelessWidget {

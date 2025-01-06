@@ -1,38 +1,18 @@
 import 'package:flutter/material.dart';
 
-class SignUpButton extends StatefulWidget {
-  const SignUpButton({super.key, required this.onPressed});
+class SignUpButton extends StatelessWidget {
+  const SignUpButton(
+      {super.key, required this.onPressed, required this.isLoading});
 
   final Future<void> Function() onPressed;
-
-  State<SignUpButton> createState() => _SignUpButtonState();
-}
-
-class _SignUpButtonState extends State<SignUpButton> {
-  bool _isLoading = false;
-
-  void _handlePress() async {
-    setState(() {
-      _isLoading = true;
-    });
-
-    try {
-      await widget.onPressed();
-    } finally {
-      if (mounted) {
-        setState(() {
-          _isLoading = false;
-        });
-      }
-    }
-  }
+  final bool isLoading;
 
   @override
   Widget build(BuildContext context) {
     return SizedBox(
       width: double.infinity,
       child: TextButton(
-        onPressed: _isLoading ? null : _handlePress,
+        onPressed: isLoading ? null : onPressed,
         style: TextButton.styleFrom(
           padding: const EdgeInsets.symmetric(horizontal: 50, vertical: 15),
           backgroundColor: Theme.of(context).colorScheme.onPrimary,
@@ -44,7 +24,7 @@ class _SignUpButtonState extends State<SignUpButton> {
           mainAxisAlignment: MainAxisAlignment.center,
           mainAxisSize: MainAxisSize.max,
           children: [
-            if (_isLoading)
+            if (isLoading)
               SizedBox(
                 height: 20,
                 width: 20,
@@ -60,7 +40,7 @@ class _SignUpButtonState extends State<SignUpButton> {
               ),
             const SizedBox(width: 10),
             Text(
-              _isLoading ? 'Signing up' : 'Sign up',
+              isLoading ? 'Signing up' : 'Sign up',
               style: Theme.of(context).textTheme.titleMedium?.copyWith(
                     color: Theme.of(context).colorScheme.primary,
                   ),
