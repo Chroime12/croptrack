@@ -25,7 +25,7 @@ ThemeData lightTheme = ThemeData().copyWith(
     ),
     bodyLarge: GoogleFonts.inter(
       fontSize: 16,
-      fontWeight: FontWeight.w400,
+      fontWeight: FontWeight.w500,
       letterSpacing: -0.2,
       color: lColorScheme.secondary,
     ),
